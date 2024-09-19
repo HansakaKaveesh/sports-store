@@ -1,0 +1,146 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Footer Section */
+footer {
+  background-color: #eb8100;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Footer Sections */
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  min-width: 250px;
+  text-align: center; /* Centering content for smaller screens */
+}
+
+/* Footer Section Headers */
+.footer-section h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* Footer Section Paragraphs */
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Footer Links List */
+.footer-section ul {
+  list-style-type: none;
+}
+
+/* Footer List Items */
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer Links */
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+/* Hover Effect for Links */
+.footer-section ul li a:hover {
+  color: #ff6b6b;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  margin-right: 10px;
+}
+
+/* Social Media Images */
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+/* Hover Effect for Social Icons */
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #6b6b6b;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-section {
+      min-width: 100%;
+      margin: 10px 0;
+  }
+
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-bottom {
+      font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  .footer-container {
+      padding: 0 10px;
+  }
+
+  .footer-section h2 {
+      font-size: 16px;
+  }
+
+  .footer-section p, 
+  .footer-section ul li a, 
+  .footer-bottom p {
+      font-size: 12px;
+  }
+
+  .social-icons img {
+      width: 20px;
+      height: 20px;
+  }
+}

@@ -1,0 +1,33 @@
+/* Ensure the app takes up the full height and width of the screen */
+.app {
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); /* Adjusted shadow units for better flexibility */
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  border: 6px solid #000; /* Use fixed unit for better control */
+}
+
+/* Add media queries to make it responsive for different screen sizes */
+@media (max-width: 1200px) {
+  .app {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    box-shadow: none;
+    padding: 0.25rem;
+    border: none;
+  }
+}

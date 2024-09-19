@@ -1,0 +1,110 @@
+.aboutUsPage {
+  background-color: #ffbaa0;
+  color: #ff3d00;
+  font: 900 87.5% Poppins, sans-serif;
+  padding: 0;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+/* For large desktops */
+@media (max-width: 1200px) {
+  .aboutUsPage {
+    padding: 0;
+  }
+}
+
+.rectangle {
+  background-color: #ef9424;
+  position: relative;
+  width: 100%;
+  align-self: start;
+  height: 500px;
+}
+
+.mainContent {
+  padding: 0 0 5%;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Hero section styling */
+.heroSection {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 90px;
+  max-width: 100%;
+  height: 100%;
+}
+
+.pageTitle {
+  color: #000;
+  font-size: 96px;
+  padding-top: 100px;
+  text-align: center;
+
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 100%;
+  align-self: start;
+  height: 500px;
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 0 0 10%;
+  }
+
+  .heroSection {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .pageTitle {
+    font-size: 60px;
+    padding: 20px;
+  }
+
+  .heroImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 0 0 5%;
+  }
+
+  .pageTitle {
+    font-size: 36px;
+    padding: 10px;
+  }
+
+  .heroSection {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: auto;
+  }
+}

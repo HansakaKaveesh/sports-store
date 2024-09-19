@@ -1,0 +1,48 @@
+.ourMission {
+  margin-bottom: 90px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  color: #000;
+  font-size: 36px;
+  margin-bottom: 37px;
+}
+
+.missionStatement {
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .ourMission {
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .missionStatement {
+    font-size: 18px;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .missionStatement {
+    font-size: 16px;
+    text-align: justify;
+  }
+}

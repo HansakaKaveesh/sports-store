@@ -1,0 +1,179 @@
+.footer {
+  background-color: #ef9424;
+  padding: 50px 0;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  color: #131313;
+  font-family: Inter, sans-serif;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.footerContent {
+  align-items: right;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.quickLinks {
+  padding-left: 3%;
+}
+
+.aboutSection,
+.quickLinks,
+.socialLinks,
+.contactInfo {
+  padding: 0 0;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.quickLinks ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.quickLinks li {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.quickLinks a {
+  color: #131313;
+  text-decoration: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.socialIcons a {
+  display: inline-block;
+  width: 24px;
+  max-width: 100%;
+  height: 24px;
+}
+
+.socialIcons img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(19, 19, 19, 1);
+  margin: 44px 0 14px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.copyright {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 991px) {
+  .footer {
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .aboutSection,
+  .quickLinks,
+  .socialLinks,
+  .contactInfo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  h3 {
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .socialIcons a {
+    width: 20px;
+    max-width: 100%;
+    height: 20px;
+  }
+}
+
+/* For small screens (mobiles) */
+@media (max-width: 576px) {
+  .footer {
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  h3 {
+    font-size: 14px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .socialIcons a {
+    width: 18px;
+    max-width: 100%;
+    height: 18px;
+  }
+
+  .divider {
+    margin: 20px 0 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .copyright {
+    font-size: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
