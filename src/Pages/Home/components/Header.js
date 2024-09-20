@@ -8,6 +8,9 @@ const Header = () => {
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
+  
+
+  
 
   return (
     <div className="header">

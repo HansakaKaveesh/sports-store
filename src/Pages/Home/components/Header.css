@@ -1,9 +1,11 @@
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Header styling */
 .header {
   background-color: #fda82d;
   height: 500px;
@@ -27,9 +29,10 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Adjust navbar logo size for responsiveness */
 .navbar-logo img {
-  width:15%;
-  height: 15%;
+  width: 15%;
+  height: auto;
 }
 
 .navbar-links ul {
@@ -51,13 +54,13 @@
   color: #ff9644;
 }
 
+/* Cart icon styling */
 .cart-icon {
   color: #ff531c;
   font-size: 20px;
 }
 
-
-
+/* Centered logo-content */
 .logo-content {
   position: absolute;
   top: 50%;
@@ -65,12 +68,10 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
-  width: 600px;
-  height:500 px;
+  width: 80%;
 }
 
-
-
+/* Search bar styling */
 .search-bar {
   position: absolute;
   bottom: 20px;
@@ -106,7 +107,7 @@
   color: #ff531c;
 }
 
-/* Style the dropdown */
+/* Dropdown menu styling */
 .navbar .dropdown {
   position: relative;
   display: inline-block;
@@ -121,10 +122,11 @@
   z-index: 1;
   list-style: none;
   padding: 0;
+  border-radius: 5px;
 }
 
 .dropdown-menu li {
-  padding: 8px 16px;
+  padding: 10px 16px;
 }
 
 .dropdown-menu li a {
@@ -137,7 +139,67 @@
   display: block;
 }
 
-/* Add some hover effects */
 .dropdown-menu li:hover {
   background-color: #f1f1f1;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-logo img {
+    width: 25%; /* Adjust logo size for tablets */
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul li {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .logo-content {
+    width: 50%; /* Adjust width for tablets */
+  }
+
+  .search-bar {
+    width: 90%;
+    right: 5%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-logo img {
+    width: 40%; /* Smaller logo for mobile */
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-content {
+    max-width:  100%; /* Full width for mobile */
+    text-align: center;
+  }
+
+  .search-bar {
+    bottom: 10px;
+    right: 5%;
+    width: 90%; /* Full width search bar on mobile */
+  }
 }

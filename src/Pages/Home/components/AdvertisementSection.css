@@ -18,3 +18,14 @@
     object-fit: cover;
   }
   
+  @media (max-width: 768px) {
+    .advertisement-section {
+      height: 400px; /* Adjust height for tablet screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .advertisement-section {
+      height: 300px; /* Adjust height for mobile screens */
+    }
+  }
