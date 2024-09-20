@@ -51,7 +51,7 @@ const Header = () => {
             <li><a><Link to="/Login">Login</Link></a></li>
           </ul>
         </div>
-        <div className="cart-icon"><Link to="Checkout">🛒</Link></div>
+        <div className="cart-icon"><Link to="/Checkout">🛒</Link></div>
       </div>
 
       <div className="search-bar">

@@ -4,8 +4,8 @@ import Home from './Pages/Home/App';
 import Tshirts from './Pages/Items/T shirts/App'
 import Cricket from './Pages/Items/CricketShop/CricketShop'
 import Contact from './Pages/Contact/ContactUs'
-import Login from './Pages/Login/Login'
-import Checkout from './Pages/Checkout/F12Main'
+import Login from './Pages/LoginPage/LoginPage'
+import Checkout from './Pages/Checkout/CheckoutPage'
 import Rugby from './Pages/Items/Rugby/Rugby'
 import About from './Pages/About/App'
 
