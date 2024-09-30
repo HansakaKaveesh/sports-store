@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './AdvertisementSection.css';
 
 const ads = [
-  { id: 1, img: 'homepage-concept-with-search-bar (1).jpg', alt: 'Ad 1' },
-  { id: 2, img: 'software-developer-using-terminal-window-app-laptop-learning-code-new-user-interface-program-developing-cloud-computing-online-server-with-firewall-security-css-html-script.jpg', alt: 'Ad 2' },
-  { id: 3, img: 'homepage-concept-with-search-bar.jpg', alt: 'Ad 3' }
+  { id: 1, img: 'ad1.jpg', alt: 'Ad 1' },
+  { id: 2, img: 'ad2.jpg', alt: 'Ad 2' },
+  { id: 3, img: 'ad3.jpg', alt: 'Ad 3' }
 ];
 
 const AdvertisementSection = () => {

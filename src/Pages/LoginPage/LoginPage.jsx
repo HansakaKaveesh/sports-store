@@ -5,7 +5,7 @@ import React from "react";
 import styles from "./LoginPage.module.css";
 import Header from "./Header";
 import LoginForm from "./LoginForm";
-import Footer from "./Footer";
+import Footer from "../Home/components/Footer";
 
 function LoginPage() {
   return (

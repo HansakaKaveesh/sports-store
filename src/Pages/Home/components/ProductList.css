@@ -24,7 +24,7 @@
 }
 
 /* Individual Product Card */
-.product-card {
+.product-card1 {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,34 +33,34 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card img {
+.product-card1 img {
   width: 100%;
-  height: auto;
+  height: 50%;
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 15px;
 }
 
-.product-card h3 {
+.product-card1 h3 {
   font-size: 1.2rem;
   color: #333;
   margin: 10px 0;
 }
 
-.product-card p {
+.product-card1 p {
   font-size: 1rem;
   color: #666;
   margin: 10px 0;
 }
 
 /* Hover Effects for Product Cards */
-.product-card:hover {
+.product-card1:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Add to Cart Button */
-.product-card .add-to-cart-btn {
+.product-card1 .add-to-cart-btn {
   background-color: #c3a763;
   color: white;
   padding: 10px 20px;
@@ -72,7 +72,7 @@
   margin-top: 10px;
 }
 
-.product-card .add-to-cart-btn:hover {
+.product-card1 .add-to-cart-btn:hover {
   background-color: #a87b35;
 }
 
@@ -86,15 +86,15 @@
     justify-content: center; /* Ensures grid stays centered */
   }
 
-  .product-card {
+  .product-card1 {
     padding: 15px;
   }
 
-  .product-card h3 {
+  .product-card1 h3 {
     font-size: 1.1rem;
   }
 
-  .product-card p {
+  .product-card1 p {
     font-size: 0.9rem;
   }
 }
@@ -103,23 +103,30 @@
 @media (max-width: 480px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr); /* Ensures two columns for mobile */
-    gap: 10px;
+    gap: 0px;
     justify-content: center; /* Ensures grid stays centered */
+    
   }
 
-  .product-card {
-    padding: 10px;
+  .product-card1 {
+    padding: 20px;
   }
 
-  .product-card img {
+  .product-card1 img {
     height: 150px; /* Limits image height for small screens */
   }
 
-  .product-card h3 {
+  .product-card1 h3 {
     font-size: 1rem;
   }
 
-  .product-card p {
+  .product-card1 p {
     font-size: 0.8rem;
+  }
+
+  .product-list{
+    padding: 10px;
+    padding-right: -30px;
+
   }
 }
