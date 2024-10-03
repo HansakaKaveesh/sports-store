@@ -24,21 +24,21 @@ const products = [
   },
 
   {
-    id: 2,
+    id: 4,
     name: 'Adidas Running Shoes',
     price: 150,
     image: '/Pro6.avif',
   },
 
   {
-    id: 2,
+    id: 5,
     name: 'Adidas Running Shoes',
     price: 150,
     image: '/Pro4.png',
   },
 
   {
-    id: 2,
+    id: 6,
     name: 'Adidas Running Shoes',
     price: 150,
     image: '/Pro3.jpg',
