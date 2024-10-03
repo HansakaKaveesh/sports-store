@@ -27,7 +27,7 @@ const products = [
     id: 4,
     name: 'Adidas Running Shoes',
     price: 150,
-    image: '/Pro6.avif',
+    image: '/Pro5.png',
   },
 
   {
