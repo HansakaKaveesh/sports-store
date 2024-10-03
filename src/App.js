@@ -9,6 +9,7 @@ import Checkout from './Pages/Checkout/CheckoutPage'
 import Rugby from './Pages/Items/Rugby/Rugby'
 import About from './Pages/About/App'
 import Signup from './Pages/Signup/SignUpPage'
+import Admin from './Pages/Admin/App'
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -29,6 +30,7 @@ function App() {
         <Route path="Rugby" element={<Rugby/>} />
         <Route path="About" element={<About/>} />
         <Route path="Signup" element={<Signup/>} />
+        <Route path="Admin" element={<Admin/>} />
         </Routes>
     </Router>
 

@@ -1,0 +1,68 @@
+.main-content-area {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.component-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 2;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cpu { background-color: #f0f0ff; }
+.gpu { background-color: #f5faff; }
+.motherboard { background-color: #fffbe7; }
+.ram { background-color: #fff0f6; }
+
+.history-review {
+  flex: 3;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  text-align: center;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.email {
+  font-size: 14px;
+  color: #777;
+}
+
+.user-stats {
+  margin-top: 20px;
+  font-size: 16px;
+}

@@ -51,6 +51,7 @@ const Header = () => {
           <li><Link to="/About">About Us</Link></li>
           <li><Link to="/Contact">Contact Us</Link></li>
           <li><Link to="/Login">Login</Link></li>
+          <li><Link to="/Signup">Signup</Link></li>
         </ul>
         
         <div className="cart-icon"><Link to="/Checkout">🛒</Link></div>
