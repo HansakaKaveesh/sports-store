@@ -11,9 +11,28 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSignedUp, setIsSignedUp] = useState(false); // Track signup status
+  const [errorMessage, setErrorMessage] = useState(''); // To track validation errors
+
+  const validatePassword = (password, name) => {
+    // Check password length and whether it contains the name
+    if (password.length < 8) {
+      return "Password must be at least 8 characters long.";
+    }
+    if (password.includes(name)) {
+      return "Password cannot contain your name.";
+    }
+    return null; // No errors
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const passwordError = validatePassword(password, name);
+
+    if (passwordError) {
+      setErrorMessage(passwordError);
+      return; // Stop the submission if there are validation errors
+    }
+
     try {
       await axios.post('http://localhost:5000/signup', {
         name,
@@ -22,8 +41,10 @@ const Signup = () => {
         password,
       });
       setIsSignedUp(true); // Set signup success
+      setErrorMessage(''); // Clear any error messages
     } catch (err) {
       alert('Signup failed');
+      setErrorMessage('Signup failed, please try again.'); // Update the error message on signup failure
     }
   };
 
@@ -74,6 +95,7 @@ const Signup = () => {
                 className="form-input"
               />
             </div>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             <button type="submit" className="signup-button">Signup</button>
           </form>
         )}
