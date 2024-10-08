@@ -1,7 +1,9 @@
 .main-content-area {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 10px;
+  padding-left: 2%;
+  padding-right:2% ;
 }
 
 .component-cards {
