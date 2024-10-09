@@ -1,72 +1,49 @@
+// src/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './Login.css'; // Link the CSS file
-import Header from './Header';
-import Footer from '../Contact/Footer';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', {
-        username,
-        password,
-      });
-      localStorage.setItem('token', response.data.token);
-      
-      navigate('/Admin'); // Navigate to admin dashboard on success
-    } catch (err) {
-      setError('Invalid credentials');
+      const response = await axios.post('http://localhost:5000/login', { username, password });
+      alert(response.data);
+    } catch (error) {
+      alert('Login failed');
     }
   };
 
   return (
-    <div>
-      <Header/>
-      <div className="login-container">
-        <h2 className="login-title">Login</h2>
-        <form className="login-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label className="form-label">Username:</label>
-            <input 
-              type="text" 
-              className="form-input"
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
-            />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Password:</label>
-            <div className="password-container">
-              <input 
-                type={showPassword ? 'text' : 'password'} 
-                className="form-input"
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-              />
-              <button 
-                type="button" 
-                className="toggle-password-btn" 
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? 'Hide' : 'Show'}
-              </button>
-            </div>
-          </div>
-          <button type="submit" className="login-btn">Login</button>
-          {error && <p className="error-message">{error}</p>}
-        </form>
-        <a href="#" className="forgot-password">Forgot password?</a>
+    <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
+      <div>
+        <label>Username:</label>
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
       </div>
-      <Footer/>
-    </div>
+      <div>
+        <label>Password:</label>
+        <input
+          type={showPassword ? 'text' : 'password'}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <input
+          type="checkbox"
+          checked={showPassword}
+          onChange={() => setShowPassword(!showPassword)}
+        />
+        <label>Show Password</label>
+      </div>
+      <button type="submit">Login</button>
+      <div>
+        <a href="#">Forgot Password?</a>
+      </div>
+    </form>
   );
 };
 
