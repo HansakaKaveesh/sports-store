@@ -1,170 +1,111 @@
-/* Full-page background and centering */
-.signup-container {
-  display: flex;
-  flex-direction: column;
+/* Basic Reset */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-  font-family: 'Arial', sans-serif;
-  animation: fadeInBackground 1.5s ease-in-out;
-  padding: 20px; /* Ensure some padding for small screens */
-  box-sizing: border-box;
+  
+  
+  
 }
 
-/* Form heading styling */
-.signup-heading {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #000000;
-  text-align: center; /* Center the heading on all screens */
-  animation: fadeInText 1.2s ease-in-out;
-}
-
-/* Form styling */
 .signup-form {
-  background-color: #fff;
-  padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
   max-width: 400px;
-  box-sizing: border-box;
-  animation: scaleUpForm 1s ease-in-out;
+  margin: 0 auto;
+  margin-top: 7%;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in;
 }
 
-/* Form group container */
+.signup-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
 .form-group {
-  margin-bottom: 15px;
-  animation: fadeInText 1.5s ease-in-out;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Label styling */
-label {
+.form-label {
   display: block;
-  font-size: 1rem;
-  color: #000000;
-  font-weight: bold;
   margin-bottom: 5px;
-  display: block;
+  font-weight: bold;
+  color: #555;
 }
 
-/* Input field styling */
 .form-input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
-  background-color: #f9f9f9;
-  transition: border-color 0.3s ease;
-  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
 }
 
-/* Input focus effect */
 .form-input:focus {
-  border-color: #007bff;
+  border-color: #ff7300;
   outline: none;
-  animation: inputFocusGlow 0.5s ease-in-out forwards;
 }
 
-/* Signup button styling */
 .signup-button {
   width: 100%;
-  padding: 10px 0;
-  background-color: #f7a800;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
-  color: #fff;
+  background-color: #ff7300;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  animation: buttonPulse 1.5s infinite ease-in-out;
-  box-sizing: border-box;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .signup-button:hover {
-  background-color: #ff8717;
+  background-color: #ac4d00;
   transform: scale(1.05);
-  animation: none; /* Stop pulsing on hover */
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .signup-form {
-    padding: 20px;
-  }
-
-  .signup-heading {
-    font-size: 1.8rem; /* Adjust heading size for mobile */
-  }
+.signup-button:active {
+  transform: scale(0.95);
 }
 
-@media (max-width: 480px) {
-  .signup-heading {
-    font-size: 1.5rem; /* Smaller heading on very small screens */
-  }
-
-  .signup-form {
-    padding: 15px; /* Reduce padding for very small screens */
-  }
+.signup-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
 }
 
-/* Keyframes for Animations */
-
-/* Fade In Background */
-@keyframes fadeInBackground {
-  0% {
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
-  100% {
-    opacity: 1;
-  }
 }
 
-/* Scale Up Form */
-@keyframes scaleUpForm {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Fade In Text */
-@keyframes fadeInText {
-  0% {
+@keyframes fadeIn {
+  from {
     opacity: 0;
     transform: translateY(-20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* Button Pulse Animation */
-@keyframes buttonPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Input Focus Glow */
-@keyframes inputFocusGlow {
-  0% {
-    box-shadow: 0 0 0 rgba(0, 123, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
 }
