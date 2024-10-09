@@ -1,4 +1,3 @@
-// src/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -40,9 +39,6 @@ const Login = () => {
         <label>Show Password</label>
       </div>
       <button type="submit">Login</button>
-      <div>
-        <a href="#">Forgot Password?</a>
-      </div>
     </form>
   );
 };
