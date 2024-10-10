@@ -1,35 +1,52 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
-function Login() {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/login', formData);
-      console.log(res.data);
-      alert('Login successful');
-    } catch (err) {
-      console.error(err);
+      const response = await axios.post("http://othishi.eu-north-1.elasticbeanstalk.com/login", {
+        email,
+        password,
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error("Login failed", error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-      <input type={showPassword ? 'text' : 'password'} name="password" placeholder="Password" onChange={handleChange} required />
-      <button type="button" onClick={() => setShowPassword(!showPassword)}>
-        {showPassword ? 'Hide' : 'Show'} Password
-      </button>
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <h2>Login</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type={showPassword ? "text" : "password"}
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={showPassword}
+          onChange={() => setShowPassword(!showPassword)}
+        />
+        Show Password
+      </label>
+      <button onClick={handleLogin}>Login</button>
+      <p>
+        <a href="#">Forgot Password?</a>
+      </p>
+    </div>
   );
-}
+};
 
-export default Login;
+export default LoginForm;
