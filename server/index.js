@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI, {
-  connectTimeoutMS: 30000,
+  
 })
   .then(() => {
     console.log("Connected to MongoDB Atlas");
