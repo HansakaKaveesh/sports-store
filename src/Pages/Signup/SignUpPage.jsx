@@ -1,67 +1,67 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import './SignUpPage.css';  // Make sure to import the CSS
+import './Signup.css'; // Import the CSS file
 
-function Signup() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    username: '',
-    email: '',
-    phoneNumber: '',
-    password: ''
-  });
+const Signup = () => {
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleSignup = async () => {
+    if (password === name || password === username) {
+      setError('Password should not match the name or username.');
+      return;
+    }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', formData);
+      const response = await axios.post('http://localhost:5000/signup', { name, username, email, password });
       alert(response.data.message);
     } catch (error) {
-      alert(error.response.data.error);
+      if (error.response && error.response.data.error) {
+        setError(error.response.data.error);
+      } else {
+        setError('Error in signup');
+      }
     }
   };
 
   return (
-    <form className="signup-form" onSubmit={handleSubmit}>
-      <h2 className="form-title">Sign Up</h2>
+    <div className="signup-container">
+      <h2 className="signup-title">Signup</h2>
+      {error && <p className="error-message">{error}</p>}
       <input
-        className="form-input"
-        name="fullName"
-        onChange={handleChange}
-        placeholder="Full Name"
+        type="text"
+        className="signup-input"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
       <input
-        className="form-input"
-        name="username"
-        onChange={handleChange}
+        type="text"
+        className="signup-input"
         placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <input
-        className="form-input"
-        name="email"
-        onChange={handleChange}
+        type="email"
+        className="signup-input"
         placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <input
-        className="form-input"
-        name="phoneNumber"
-        onChange={handleChange}
-        placeholder="Phone Number"
-      />
-      <input
-        className="form-input"
         type="password"
-        name="password"
-        onChange={handleChange}
+        className="signup-input"
         placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="form-button" type="submit">Sign Up</button>
-    </form>
+      <button className="signup-button" onClick={handleSignup}>Signup</button>
+    </div>
   );
-}
+};
 
 export default Signup;

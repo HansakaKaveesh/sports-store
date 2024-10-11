@@ -1,134 +1,84 @@
-.login-form {
-  max-width: 400px;
-  margin: 0 auto;
-  margin-top: 10%;
+/* General styling for the login form container */
+.login-container {
+  max-width: 350px;
+  margin: 160px auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards ease-in-out;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.form-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInInput 1.5s forwards ease-in-out;
-}
-
-@keyframes fadeInInput {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: orange;
-  box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
-}
-
-.form-button {
-  width: 100%;
-  padding: 10px;
-  background-color: orange;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
-  animation: fadeInButton 1.8s forwards ease-in-out;
-}
-
-@keyframes fadeInButton {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.form-button:hover {
-  background-color: darkorange;
-  transform: scale(1.05);
-}
-
-.form-title {
+  border-radius: 10px;
   text-align: center;
-  color: orange;
+}
+
+/* Title styling */
+.login-title {
+  font-size: 2rem;
+  color: #333;
   margin-bottom: 20px;
-  animation: fadeInDown 1s ease-in-out;
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.toggle-container {
-  display: flex;
-  justify-content: center;
+/* Input field styling */
+.login-input {
+  width: 100%;
+  padding: 10px;
   margin: 10px 0;
-  animation: fadeInToggle 1.5s ease-in-out;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
 }
 
-@keyframes fadeInToggle {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Input focus effect */
+.login-input:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
-.toggle-button {
-  background: none;
-  color: orange;
+/* Toggle password button styling */
+.toggle-password-btn {
+  background-color: transparent;
   border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  margin-top: 5px;
   cursor: pointer;
-  font-size: 14px;
-  padding: 5px;
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease;
 }
 
-.toggle-button:hover {
-  color: darkorange;
+/* Toggle password button hover effect */
+.toggle-password-btn:hover {
+  color: #0056b3;
+}
+
+/* Login button styling */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Login button hover effect */
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Forgot password link styling */
+.forgot-password-link {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Forgot password link hover effect */
+.forgot-password-link:hover {
   text-decoration: underline;
 }

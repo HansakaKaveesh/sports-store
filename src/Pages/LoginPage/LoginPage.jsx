@@ -1,51 +1,48 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import './Login.css';  // Make sure to import the CSS
+import './Login.css'; // Import the CSS file
 
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/login', { email, password });
-      alert("Login successful");
+      const response = await axios.post('http://localhost:5000/login', { email, password });
+      alert(response.data.message);
     } catch (error) {
-      alert(error.response.data.message);
+      alert('Invalid login credentials');
     }
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <h2 className="form-title">Login</h2>
+    <div className="login-container">
+      <h2 className="login-title">Login</h2>
       <input
-        className="form-input"
         type="email"
+        className="login-input"
+        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
       />
       <input
-        className="form-input"
-        type={showPassword ? 'text' : 'password'}
+        type={showPassword ? "text" : "password"}
+        className="login-input"
+        placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
       />
-      <div className="toggle-container">
-        <button
-          type="button"
-          className="toggle-button"
-          onClick={() => setShowPassword(!showPassword)}
-        >
-          {showPassword ? 'Hide Password' : 'Show Password'}
-        </button>
-      </div>
-      <button className="form-button" type="submit">Login</button>
-    </form>
+      <button
+        className="toggle-password-btn"
+        onClick={() => setShowPassword(!showPassword)}
+      >
+        {showPassword ? 'Hide' : 'Show'} Password
+      </button>
+      <button className="login-button" onClick={handleLogin}>Login</button>
+      <a className="forgot-password-link" href="/forgot-password">Forgot Password?</a>
+    </div>
   );
-}
+};
 
 export default Login;
