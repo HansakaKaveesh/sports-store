@@ -1,111 +1,76 @@
-/* Basic Reset */
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
-  
-  justify-content: center;
-  align-items: center;
-  
-  
-  
-}
-
 .signup-form {
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 7%;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-in;
+  margin-top: 10%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards ease-in-out; /* Animation for form appearance */
 }
 
-.signup-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-.form-group {
-  margin-bottom: 20px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-input {
   width: 100%;
   padding: 10px;
-  border: 2px solid #ccc;
+  margin: 10px 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  transition: border-color 0.3s ease-in-out;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out; /* Smooth focus animation */
 }
 
 .form-input:focus {
-  border-color: #ff7300;
   outline: none;
+  border-color: orange;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.5); /* Subtle glow effect on focus */
 }
 
-.signup-button {
+.form-button {
   width: 100%;
   padding: 10px;
+  background-color: orange;
+  color: white;
   border: none;
   border-radius: 5px;
-  background-color: #ff7300;
-  color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease-in-out; /* Button hover effect animation */
 }
 
-.signup-button:hover {
-  background-color: #ac4d00;
-  transform: scale(1.05);
+.form-button:hover {
+  background-color: darkorange;
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
 }
 
-.signup-button:active {
-  transform: scale(0.95);
+.form-title {
+  text-align: center;
+  color: orange;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-in-out; /* Animation for the title */
 }
 
-.signup-button::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: ripple 0.6s linear;
-  pointer-events: none;
-}
-
-@keyframes ripple {
-  to {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
+@keyframes fadeInDown {
+  0% {
     opacity: 0;
     transform: translateY(-20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+
