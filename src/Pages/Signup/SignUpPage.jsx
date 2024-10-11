@@ -1,64 +1,39 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from 'react';
+import axios from 'axios';
 
-const RegisterForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [country, setCountry] = useState("");
-  const [password, setPassword] = useState("");
+function Signup() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    username: '',
+    email: '',
+    phoneNumber: '',
+    password: ''
+  });
 
-  const handleRegister = async () => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post("http://othishi.eu-north-1.elasticbeanstalk.com/register", {
-        name,
-        email,
-        phone,
-        country,
-        password,
-      });
-      console.log(response.data);
+      const response = await axios.post('/api/signup', formData);
+      alert(response.data.message);
     } catch (error) {
-      console.error("Registration failed", error);
+      alert(error.response.data.error);
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="tel"
-        placeholder="Phone"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Country"
-        value={country}
-        onChange={(e) => setCountry(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleRegister}>Register</button>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input name="fullName" onChange={handleChange} placeholder="Full Name" />
+      <input name="username" onChange={handleChange} placeholder="Username" />
+      <input name="email" onChange={handleChange} placeholder="Email" />
+      <input name="phoneNumber" onChange={handleChange} placeholder="Phone Number" />
+      <input type="password" name="password" onChange={handleChange} placeholder="Password" />
+      <button type="submit">Sign Up</button>
+    </form>
   );
-};
+}
 
-export default RegisterForm;
+export default Signup;

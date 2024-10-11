@@ -1,52 +1,33 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from 'react';
+import axios from 'axios';
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post("http://othishi.eu-north-1.elasticbeanstalk.com/login", {
-        email,
-        password,
-      });
-      console.log(response.data);
+      const response = await axios.post('/api/login', { email, password });
+      alert("Login successful");
     } catch (error) {
-      console.error("Login failed", error);
+      alert(error.response.data.message);
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <form onSubmit={handleSubmit}>
+      <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type={showPassword ? "text" : "password"}
-        placeholder="Password"
-        value={password}
+        type={showPassword ? 'text' : 'password'}
         onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
       />
-      <label>
-        <input
-          type="checkbox"
-          checked={showPassword}
-          onChange={() => setShowPassword(!showPassword)}
-        />
-        Show Password
-      </label>
-      <button onClick={handleLogin}>Login</button>
-      <p>
-        <a href="#">Forgot Password?</a>
-      </p>
-    </div>
+      <button onClick={() => setShowPassword(!showPassword)}>Show Password</button>
+      <button type="submit">Login</button>
+    </form>
   );
-};
+}
 
-export default LoginForm;
+export default Login;
