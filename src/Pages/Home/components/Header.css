@@ -94,8 +94,13 @@
     display: flex;
   }
 
+  .menu-icon.open + .navbar-links {
+    display: flex;
+  }
+
   .navbar-links {
     position: absolute;
+    display: none;
     top: 60px;
     right: 0;
     height: 40vh;
